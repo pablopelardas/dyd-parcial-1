@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primer parcial DyD - Diseño y Desarrollo Web</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+  <body class="bg-dyd-100 font-poppins">
+    <header>
+      <nav class="bg-dyd-900">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button id="openMenuButton" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Abrir menu</span>
+
+                <!-- Icono menu cerrado -->
+                <svg id="menuClosedIcon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!-- Icono menu abierto -->
+                <svg id="menuOpenedIcon"  class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-1 items-center justify-center sm:gap-4 sm:justify-between">
+              <div class="flex shrink-0 items-center">
+                <img class="h-32 w-auto" src="/img/logo.png" alt="DyD">
+                <h2 class="text-white text-2xl hidden lg:block font-inter">Diseño y Desarrollo Web</h2>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4 font-inter">
+                  <a href="./index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                  <a href="./materias.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
+                  <a href="./avisos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
+                  <a href="./sobre-mi.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
+                  <a href="./contacto.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Contacto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pt-2 pb-3 font-inter">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="./index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+            <a href="./materias.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
+            <a href="./avisos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
+            <a href="./sobre-mi.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
+            <a href="./contacto.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-[calc(100dvh-120px)] py-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-6 font-inter text-dyd-900 text-center">Materias</h2>
+    
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+              <h3 class="text-xl font-semibold mb-4 font-inter text-gray-800">Fechas de Exámenes</h3>
+              <div>
+                <ul class="list-disc list-inside text-gray-600 font-inter">
+                  <li>Primer Examen Parcial - <span class="font-semibold">21/04/2025</span></li>
+                  <li>Segundo Examen Parcial - <span class="font-semibold">09/06/2025</span></li>
+                  <li>Examen Recuperatorio - Examen Final Anticipado - <span class="font-semibold">30/06/2025</span></li>
+                  <li>Examen Final Regular - <span class="font-semibold">14/07/2025</span></li>
+                </ul>
+              </div>
+            </section>
+    
+            <section class="bg-white shadow-md rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 font-inter text-gray-800">Bibliografía</h3>
+              <div>
+                <p class="font-semibold text-gray-700 mb-2 font-inter">Obligatoria</p>
+                <ul class="list-disc list-inside text-gray-600 mb-4 font-inter">
+                  <li>Niederst Robbins, J. (2013). HTML5 pocket reference. O’Reilly.</li>
+                  <li>Meyer, E. A. (2018). CSS pocket reference. O’Reilly</li>
+                  <li>Brown, E. (2016). Learning javascript. O’Reilly</li>
+                </ul>
+                <p class="font-semibold text-gray-700 mb-2 font-inter">Complementaria</p>
+                <ul class="list-disc list-inside text-gray-600 font-inter">
+                  <li>Schulz, R. G. (2009). Diseño web con CSS. Alfaomega.</li>
+                  <li>Firtman, M. (2012). JQuery mobile: Aplicaciones HTML5 para móviles. Anaya Multimedia</li>
+                  <li>Muñoz Carmona, J. (2021). Despliegue de aplicaciones web. Síntesis.</li>
+                  <li>Freeman, E., Robson, E., Sierra, K., & Bates, B. (2004). Head First design patterns: a Brain-Friendly Guide. O’Reilly</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+    
+          <section class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4 font-inter text-gray-800">Actividades UVAs</h3>
+            <div>
+              <p class="text-gray-700 mb-2 font-inter">Enlaces a las actividades realizadas en la UVA correspondiente.</p>
+              <ul class="list-none list-inside text-gray-600 font-inter">
+                <li>
+                  <strong class="font-semibold text-gray-700">UVA1</strong>
+                  <ul class="list-disc list-inside ml-4 mt-2">
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ficha-personal-uade" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ficha-personal-uade/PresentaPabloPelardas.html" class="text-blue-500 hover:underline">Ficha personal</a></li>
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ficha-materia" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ficha-materia/DisenioYDesarrolloWeb.html" class="text-blue-500 hover:underline">Ficha Diseño y desarrollo web</a></li>
+                    <li><a target="_blank" href="https://github.com/pablopelardas/integrador-uva-1" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/integrador-uva-1/home.html" class="text-blue-500 hover:underline">Integrador</a></li>
+                  </ul>
+                </li>
+                <li class="mt-5">
+                  <strong class="font-semibold text-gray-700">UVA2</strong>
+                  <ul class="list-disc list-inside ml-4 mt-2">
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ejercicios-dise-o-y-desarrollo-web-uade" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ejercicios-dise-o-y-desarrollo-web-uade/uva-2-formato-texto/" class="text-blue-500 hover:underline">Star Wars</a></li>
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ejercicios-dise-o-y-desarrollo-web-uade" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ejercicios-dise-o-y-desarrollo-web-uade/uva-2-gym/registrate.html" class="text-blue-500 hover:underline">Gimnasio</a></li>
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ejercicios-dise-o-y-desarrollo-web-uade" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ejercicios-dise-o-y-desarrollo-web-uade/uva-2-unidades-medida/" class="text-blue-500 hover:underline">Cantina Chichilo</a></li>
+                    <li><a target="_blank" href="https://github.com/pablopelardas/ejercicios-dise-o-y-desarrollo-web-uade" class="text-blue-500 hover:underline">Repositorio</a> - <a target="_blank" href="https://pablopelardas.github.io/ejercicios-dise-o-y-desarrollo-web-uade/uva-2-grid-flexbox/" class="text-blue-500 hover:underline">Galería</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dyd-900 text-white py-4">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
+      </div>
+    </footer>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

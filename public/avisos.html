@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primer parcial DyD - Avisos</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+  <body class="bg-dyd-100 font-poppins">
+    <header>
+      <nav class="bg-dyd-900">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button id="openMenuButton" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Abrir menu</span>
+
+                <!-- Icono menu cerrado -->
+                <svg id="menuClosedIcon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!-- Icono menu abierto -->
+                <svg id="menuOpenedIcon"  class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-1 items-center justify-center sm:gap-4 sm:justify-between">
+              <div class="flex shrink-0 items-center">
+                <img class="h-32 w-auto" src="/img/logo.png" alt="DyD">
+                <h2 class="text-white text-2xl hidden lg:block font-inter">Diseño y Desarrollo Web</h2>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4 font-inter">
+                  <a href="./index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                  <a href="./materias.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
+                  <a href="./avisos.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Avisos</a>
+                  <a href="./sobre-mi.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
+                  <a href="./contacto.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pt-2 pb-3 font-inter">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="./index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+            <a href="./materias.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
+            <a href="./avisos.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Avisos</a>
+            <a href="./sobre-mi.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
+            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center justify-center py-4 sm:justify-start">
+      <h2 class="text-2xl font-bold mb-4 font-inter">Avisos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- lista de avisos desordenada por materia -->
+        <div href="./dyd.html" class="bg-white shadow-md rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Diseño y Desarrollo Web</h3>
+          <ul class="list-disc list-inside">
+            <li class="text-gray-600">Aviso 1: Entrega de proyecto final el 15 de diciembre.</li>
+            <li class="text-gray-600">Aviso 2: Clase extra el 10 de diciembre a las 18:00.</li>
+          </ul>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Fundamentos de Informática</h3>
+          <ul class="list-disc list-inside">
+            <li class="text-gray-600">Aviso 1: Examen final el 20 de diciembre.</li>
+            <li class="text-gray-600">Aviso 2: Clase de repaso el 18 de diciembre a las 18:00.</li>
+          </ul>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Arquitectura de Computadores</h3>
+          <ul class="list-disc list-inside">
+            <li class="text-gray-600">Aviso 1: Entrega de trabajo práctico el 22 de diciembre.</li>
+            <li class="text-gray-600">Aviso 2: Clase de consulta el 19 de diciembre a las 18:00.</li>
+          </ul>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Marketing</h3>
+          <ul class="list-disc list-inside">
+            <li class="text-gray-600">Aviso 1: Examen parcial el 25 de diciembre.</li>
+            <li class="text-gray-600">Aviso 2: Clase de repaso el 23 de diciembre a las 18:00.</li>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Sistemas de Información I</h3>
+          <ul class="list-disc list-inside">
+            <li class="text-gray-600">Aviso 1: Entrega de proyecto final el 30 de diciembre.</li>
+            <li class="text-gray-600">Aviso 2: Clase extra el 28 de diciembre a las 18:00.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dyd-900 text-white py-4">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
+      </div>
+    </footer>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
