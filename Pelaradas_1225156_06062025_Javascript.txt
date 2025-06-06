@@ -1,0 +1,2 @@
+repo: https://github.com/pablopelardas/ejercicios-dise-o-y-desarrollo-web-uade
+web: https://pablopelardas.github.io/ejercicios-dise-o-y-desarrollo-web-uade/uva-3-javascript/
