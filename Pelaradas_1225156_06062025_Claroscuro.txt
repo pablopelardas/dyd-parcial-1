@@ -1,0 +1,2 @@
+repo: https://github.com/pablopelardas/dyd-parcial-1
+web: https://pablopelardas.github.io/dyd-parcial-1
