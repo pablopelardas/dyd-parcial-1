@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
-  <body class="bg-dyd-100 font-poppins">
+  <body class="bg-dyd-100 font-poppins dark:bg-dark-bg">
     <header>
-      <nav class="bg-dyd-900">
+      <nav class="bg-dyd-900 dark:bg-dark-header-bg">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -43,6 +43,8 @@
                   <a href="./avisos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
                   <a href="./sobre-mi.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
                   <a href="./contacto.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+  <button id="lightModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+                  <button id="darkModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
                 </div>
               </div>
             </div>
@@ -57,14 +59,16 @@
             <a href="./materias.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
             <a href="./avisos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
             <a href="./sobre-mi.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
-            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>            
+<button id="lightModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+<button id="darkModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
           </div>
         </div>
       </nav>
     </header>
 
     <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center py-4 sm:justify-start">
-      <h2 class="text-2xl font-bold mb-4 font-inter">Materias</h2>
+      <h2 class="text-2xl font-bold mb-4 font-inter dark:text-dark-text">Materias</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:hidden">
         <div class="bg-white shadow-md rounded-lg p-4">
           <h3 class="text-lg font-semibold">Diseño y Desarrollo Web</h3>
@@ -95,52 +99,52 @@
 
       <!-- table for desktop-->
        <div class="hidden sm:block w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-        <table class="min-w-full bg-white shadow-md rounded-lg">
+        <table class="min-w-full bg-white shadow-md rounded-lg dark:bg-dark-card-bg">
           <thead>
-            <tr>
-              <th class="px-4 py-6 text-left text-gray-600">Materia</th>
-              <th class="px-4 py-6 text-left text-gray-600">Día</th>
-              <th class="px-4 py-6 text-left text-gray-600">Horario</th>
-              <th class="px-4 py-6 text-left text-gray-600">Modalidad</th>
+            <tr class="">
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Materia</th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Día</th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Horario</th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Modalidad</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b">
-              <td class="px-4 py-6">Diseño y Desarrollo Web</td>
-              <td class="px-4 py-6">Lunes</td>
-              <td class="px-4 py-6">18:00 - 20:30</td>
-              <td class="px-4 py-6">Virtual</td>
+            <tr class="border-b dark:border-b-dark-border">
+              <td class="px-4 py-6 dark:text-dark-text">Diseño y Desarrollo Web</td>
+              <td class="px-4 py-6 dark:text-dark-text">Lunes</td>
+              <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
+              <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
-            <tr class="border-b">
-              <td class="px-4 py-6">Fundamentos de Informática</td>
-              <td class="px-4 py-6">Martes</td>
-              <td class="px-4 py-6">18:00 - 20:30</td>
-              <td class="px-4 py-6">Virtual</td>
+            <tr class="border-b dark:border-b-dark-border">
+              <td class="px-4 py-6 dark:text-dark-text">Fundamentos de Informática</td>
+              <td class="px-4 py-6 dark:text-dark-text">Martes</td>
+              <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
+              <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
-            <tr class="border-b">
-              <td class="px-4 py-6">Arquitectura de Computadores</td>
-              <td class="px-4 py-6">Miércoles</td>
-              <td class="px-4 py-6">18:00 - 20:30</td>
-              <td class="px-4 py-6">Virtual</td>
+            <tr class="border-b dark:border-b-dark-border">
+              <td class="px-4 py-6 dark:text-dark-text">Arquitectura de Computadores</td>
+              <td class="px-4 py-6 dark:text-dark-text">Miércoles</td>
+              <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
+              <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
-            <tr class="border-b">
-              <td class="px-4 py-6">Marketing</td>
-              <td class="px-4 py-6">Jueves</td>
-              <td class="px-4 py-6">18:00 - 20:30</td>
-              <td class="px-4 py-6">Virtual</td>
+            <tr class="border-b dark:border-b-dark-border">
+              <td class="px-4 py-6 dark:text-dark-text">Marketing</td>
+              <td class="px-4 py-6 dark:text-dark-text">Jueves</td>
+              <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
+              <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
-            <tr class="border-b">
-              <td class="px-4 py-6">Sistemas de Información I</td>
-              <td class="px-4 py-6">Viernes</td>
-              <td class="px-4 py-6">18:00 - 20:30</td>
-              <td class="px-4 py-6">Virtual</td>
+            <tr class="border-b dark:border-b-dark-border">
+              <td class="px-4 py-6 dark:text-dark-text">Sistemas de Información I</td>
+              <td class="px-4 py-6 dark:text-dark-text">Viernes</td>
+              <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
+              <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
           </tbody>
         </table>
       </div>
     </main>
 
-    <footer class="bg-dyd-900 text-white py-4">
+    <footer class="bg-dyd-900 text-white py-4 dark:bg-dark-header-bg dark:text-dark-text">
       <div class="container mx-auto text-center">
         <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
       </div>

@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
-  <body class="bg-dyd-100 font-poppins">
+  <body class="bg-dyd-100 font-poppins dark:bg-dark-bg">
     <header>
-      <nav class="bg-dyd-900">
+      <nav class="bg-dyd-900 dark:bg-dark-header-bg">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -43,6 +43,8 @@
                   <a href="./avisos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
                   <a href="./sobre-mi.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
                   <a href="./contacto.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+  <button id="lightModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+                  <button id="darkModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
                 </div>
               </div>
             </div>
@@ -57,14 +59,16 @@
             <a href="./materias.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Materias</a>
             <a href="./avisos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
             <a href="./sobre-mi.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
-            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>            
+<button id="lightModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+<button id="darkModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
           </div>
         </div>
       </nav>
     </header>
 
     <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center justify-center py-4 sm:justify-start">
-      <h2 class="text-2xl font-bold mb-4 font-inter">Materias</h2>
+      <h2 class="text-2xl font-bold mb-4 font-inter dark:text-dark-text">Materias</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="./dyd.html" class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg hover:bg-gray-50">
           <h3 class="text-lg font-semibold">Diseño y Desarrollo Web</h3>
@@ -95,7 +99,7 @@
 
     </main>
 
-    <footer class="bg-dyd-900 text-white py-4">
+    <footer class="bg-dyd-900 text-white py-4 dark:bg-dark-header-bg dark:text-dark-text">
       <div class="container mx-auto text-center">
         <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
       </div>

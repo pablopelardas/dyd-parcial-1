@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
-  <body class="bg-dyd-100 font-poppins">
+  <body class="bg-dyd-100 font-poppins dark:bg-dark-bg">
     <header>
-      <nav class="bg-dyd-900">
+      <nav class="bg-dyd-900 dark:bg-dark-header-bg">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -43,6 +43,8 @@
                   <a href="./avisos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
                   <a href="./sobre-mi.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Sobre mi</a>
                   <a href="./contacto.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+  <button id="lightModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+                  <button id="darkModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
                 </div>
               </div>
             </div>
@@ -57,37 +59,39 @@
             <a href="./materias.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
             <a href="./avisos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
             <a href="./sobre-mi.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Sobre mi</a>
-            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>            
+<button id="lightModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
+<button id="darkModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
           </div>
         </div>
       </nav>
     </header>
 
     <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center justify-center py-4 sm:justify-start">
-      <h2 class="text-2xl font-bold mb-4 font-inter">Sobre mi</h2>
+      <h2 class="text-2xl font-bold mb-4 font-inter dark:text-dark-text">Sobre mi</h2>
 
       <div class="mt-4">
         <img src="/img/perfil.jpg" alt="Pablo Pelardas" class="rounded-full w-32 h-32 object-cover">
       </div>  
 
-      <div class="bg-white shadow-md rounded-lg p-4 max-w-7xl mt-4">
-        <div class="bg-gray-100 p-6 rounded-md shadow-md">
-          <p class="mb-4 text-gray-700">
+      <div class="bg-white shadow-md rounded-lg p-4 max-w-7xl mt-4 dark:bg-dark-card-bg dark:text-dark-text">
+        <div class="bg-gray-100 p-6 rounded-md shadow-md dark:bg-dark-card-bg dark:text-dark-text">
+          <p class="mb-4 text-gray-700 dark:text-dark-text">
             ¡Hola! Soy <strong class="font-semibold text-blue-700">Pablo</strong>, un <strong class="font-semibold text-blue-500">desarrollador fullstack</strong> con más de <strong class="font-semibold text-blue-600">tres años de experiencia</strong> en el apasionante mundo del desarrollo de software. Actualmente, estoy cursando la última materia de la <strong class="font-semibold text-blue-400">Técnicatura Universitaria en Programación</strong> en la <strong class="font-semibold text-blue-800">Universidad Tecnológica Nacional (UTN) de Pacheco</strong>, y con gran entusiasmo he decidido continuar mi formación académica inscribiéndome en la <strong class="font-semibold text-blue-500">Licenciatura en Gestión de Tecnología de la Información (Sistemas)</strong> en la <strong class="font-semibold text-blue-700">UADE</strong>.
           </p>
-          <p class="mb-4 text-gray-700">
+          <p class="mb-4 text-gray-700 dark:text-dark-text">
             Además de mi sólida formación en programación, cuento con <strong class="font-semibold text-blue-600">tres años de estudios en Psicología</strong>, lo que me ha brindado valiosas <strong class="font-semibold text-blue-400">habilidades interpersonales</strong> y una <strong class="font-semibold text-blue-500">perspectiva única</strong> para abordar problemas complejos y colaborar eficazmente en equipo. Esta enriquecedora combinación me resulta de gran utilidad para mi desarrollo profesional.
           </p>
-          <p class="mb-4 text-gray-700">
+          <p class="mb-4 text-gray-700 dark:text-dark-text">
             Actualmente, formo parte de <strong class="font-semibold text-blue-500">Intuit</strong>, una empresa líder en el sector salud, donde me desempeño activamente en el <strong class="font-semibold text-blue-700">desarrollo y mantenimiento de aplicaciones web</strong>, abarcando tanto el <strong class="font-semibold text-blue-400">frontend</strong> como el robusto <strong class="font-semibold text-blue-600">backend</strong>. Mi rol implica la creación de <strong class="font-semibold text-blue-500">soluciones integrales y eficientes</strong> que van desde la intuitiva interfaz de usuario hasta la sólida lógica del servidor.
           </p>
-          <p class="mb-4 text-gray-700">
+          <p class="mb-4 text-gray-700 dark:text-dark-text">
             No tengo una preferencia marcada entre el desarrollo <strong class="font-semibold text-blue-400">frontend</strong> o <strong class="font-semibold text-blue-500">backend</strong>, ya que disfruto profundamente de ambos desafíos. Me apasiona la creación de <strong class="font-semibold text-blue-600">soluciones completas y eficientes</strong> que resuelvan problemas reales, y siempre estoy en la búsqueda constante de aprender <strong class="font-semibold text-blue-500">nuevas tecnologías y metodologías</strong> para potenciar mis habilidades y aportar un valor significativo a los proyectos en los que participo.
           </p>
-          <p class="mb-4 text-gray-700">
+          <p class="mb-4 text-gray-700 dark:text-dark-text">
             En mi tiempo libre, disfruto mucho de la lectura de <strong class="font-semibold text-blue-600">libros de diversos géneros</strong>, desde fascinante literatura técnica hasta cautivadoras novelas. Esta actividad me ayuda a mantener un saludable equilibrio entre mi exigente vida profesional y mi enriquecedora vida personal.
           </p>
-          <p class="text-gray-700">
+          <p class="text-gray-700 dark:text-dark-text">
             Mi <strong class="font-semibold text-blue-500">objetivo profesional</strong> es seguir creciendo continuamente como desarrollador, contribuyendo activamente a <strong class="font-semibold text-blue-700">proyectos innovadores y desafiantes</strong> que me permitan aplicar mis conocimientos de manera práctica y seguir aprendiendo de forma constante. Estoy siempre <strong class="font-semibold text-blue-500">abierto a nuevas oportunidades y colaboraciones</strong> que me permitan expandir aún más mi horizonte profesional.
           </p>
         </div>
@@ -99,7 +103,7 @@
 
     </main>
 
-    <footer class="bg-dyd-900 text-white py-4">
+    <footer class="bg-dyd-900 text-white py-4 dark:bg-dark-header-bg dark:text-dark-text">
       <div class="container mx-auto text-center">
         <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
       </div>
