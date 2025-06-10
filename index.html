@@ -1,75 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primer parcial DyD</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script>
+      // Evita el pantallazo claro antes de aplicar dark mode
+      (function () {
+        const theme = localStorage.getItem("themePreference");
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
   <body class="bg-dyd-100 font-poppins dark:bg-dark-bg">
-    <header>
-      <nav class="bg-dyd-900 dark:bg-dark-header-bg">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button id="openMenuButton" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Abrir menu</span>
+    <custom-header></custom-header>
 
-                <!-- Icono menu cerrado -->
-                <svg id="menuClosedIcon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <!-- Icono menu abierto -->
-                <svg id="menuOpenedIcon"  class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <div class="flex flex-1 items-center justify-center sm:gap-4 sm:justify-between">
-              <div class="flex shrink-0 items-center">
-                <img class="h-32 w-auto" src="/img/logo.png" alt="DyD">
-                <h2 class="text-white text-2xl hidden lg:block font-inter">Diseño y Desarrollo Web</h2>
-              </div>
-              <div class="hidden sm:ml-6 sm:block ">
-                <div class="flex space-x-4 font-inter">
-                  <a href="./index.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                  <a href="./materias.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
-                  <a href="./avisos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
-                  <a href="./sobre-mi.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
-                  <a href="./contacto.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
-  <button id="lightModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
-                  <button id="darkModeBtn" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="hidden sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pt-2 pb-3 font-inter">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="./index.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-            <a href="./materias.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materias</a>
-            <a href="./avisos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Avisos</a>
-            <a href="./sobre-mi.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sobre mi</a>
-            <a href="./contacto.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>            
-<button id="lightModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Light Mode</button>
-<button id="darkModeBtnMobile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dark Mode</button>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center py-4 sm:justify-start">
-      <h2 class="text-2xl font-bold mb-4 font-inter dark:text-dark-text">Materias</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:hidden">
+    <main
+      class="min-h-[calc(100dvh-120px)] flex flex-col items-center py-4 sm:justify-start"
+    >
+      <h2 class="text-2xl font-bold mb-4 font-inter dark:text-dark-text">
+        Materias
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:hidden"
+      >
         <div class="bg-white shadow-md rounded-lg p-4">
           <h3 class="text-lg font-semibold">Diseño y Desarrollo Web</h3>
           <p class="text-gray-600">Lunes de 18:00 a 20:30</p>
@@ -98,31 +61,49 @@
       </div>
 
       <!-- table for desktop-->
-       <div class="hidden sm:block w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-        <table class="min-w-full bg-white shadow-md rounded-lg dark:bg-dark-card-bg">
+      <div
+        class="hidden sm:block w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4"
+      >
+        <table
+          class="min-w-full bg-white shadow-md rounded-lg dark:bg-dark-card-bg"
+        >
           <thead>
             <tr class="">
-              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Materia</th>
-              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Día</th>
-              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Horario</th>
-              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">Modalidad</th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">
+                Materia
+              </th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">
+                Día
+              </th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">
+                Horario
+              </th>
+              <th class="px-4 py-6 text-left text-gray-600 dark:text-[#a0aec0]">
+                Modalidad
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr class="border-b dark:border-b-dark-border">
-              <td class="px-4 py-6 dark:text-dark-text">Diseño y Desarrollo Web</td>
+              <td class="px-4 py-6 dark:text-dark-text">
+                Diseño y Desarrollo Web
+              </td>
               <td class="px-4 py-6 dark:text-dark-text">Lunes</td>
               <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
               <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
             <tr class="border-b dark:border-b-dark-border">
-              <td class="px-4 py-6 dark:text-dark-text">Fundamentos de Informática</td>
+              <td class="px-4 py-6 dark:text-dark-text">
+                Fundamentos de Informática
+              </td>
               <td class="px-4 py-6 dark:text-dark-text">Martes</td>
               <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
               <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
             <tr class="border-b dark:border-b-dark-border">
-              <td class="px-4 py-6 dark:text-dark-text">Arquitectura de Computadores</td>
+              <td class="px-4 py-6 dark:text-dark-text">
+                Arquitectura de Computadores
+              </td>
               <td class="px-4 py-6 dark:text-dark-text">Miércoles</td>
               <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
               <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
@@ -134,7 +115,9 @@
               <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
             </tr>
             <tr class="border-b dark:border-b-dark-border">
-              <td class="px-4 py-6 dark:text-dark-text">Sistemas de Información I</td>
+              <td class="px-4 py-6 dark:text-dark-text">
+                Sistemas de Información I
+              </td>
               <td class="px-4 py-6 dark:text-dark-text">Viernes</td>
               <td class="px-4 py-6 dark:text-dark-text">18:00 - 20:30</td>
               <td class="px-4 py-6 dark:text-dark-text">Virtual</td>
@@ -144,12 +127,8 @@
       </div>
     </main>
 
-    <footer class="bg-dyd-900 text-white py-4 dark:bg-dark-header-bg dark:text-dark-text">
-      <div class="container mx-auto text-center">
-        <p>&copy; 2025 Diseño y Desarrollo Web - Pablo Pelardas.</p>
-      </div>
-    </footer>
-    
+    <custom-footer></custom-footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

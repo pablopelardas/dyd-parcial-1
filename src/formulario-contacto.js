@@ -1,36 +1,88 @@
-// Con el formulario en el sitio personal como estudiante de la facultad. Configurar los  inputs del mismo para darles un estilo igual a cada uno (puede ser color, pseudoclases, etc.), definir los id o clases para su programación en JavaScript para la validación del formulario.
-// .   
-// Programar una función con JavaScript que Muestre un mensaje cuando el usuario toque el botón de enviar el formulario.   
-// Si los datos no fueron completados o son erroneos (ejemplo; no ingresa un email válido), debe dar un mensaje de error con la información a corregir.
-// En caso de haber completado bien el formulario. Debe presentar un mensaje que diga gracias por su contacto (Nombre de la persona que escribió ) y el texto que diga "en breve le estaré respondiendo".
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contact-form");
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const messageInput = document.getElementById("message");
-    const submitButton = document.getElementById("submit-button");
+  // Crear contenedores de error si no existen
+  const nameError = ensureErrorContainer(nameInput);
+  const emailError = ensureErrorContainer(emailInput);
+  const messageError = ensureErrorContainer(messageInput);
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita el envío del formulario por defecto
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    clearErrors();
 
-        // Validación de campos
-        if (!nameInput.value || !emailInput.value || !messageInput.value) {
-            alert("Por favor, complete todos los campos.");
-            return;
-        }
+    let isValid = true;
 
-        // Validación de email
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value)) {
-            alert("Por favor, ingrese un email válido.");
-            return;
-        }
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
 
-        // Si todo está correcto, muestra el mensaje de agradecimiento
-        alert(`Gracias por su contacto, ${nameInput.value}. En breve le estaré respondiendo.`);
-        
-        // Opcional: Reiniciar el formulario
-        form.reset();
+    if (!name) {
+      nameError.textContent = "Por favor ingrese su nombre.";
+      nameInput.classList.add("input-error");
+      isValid = false;
+    }
+
+    if (!email) {
+      emailError.textContent = "El correo electrónico es obligatorio.";
+      emailInput.classList.add("input-error");
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailError.textContent = "Ingrese un correo electrónico válido.";
+      emailInput.classList.add("input-error");
+      isValid = false;
+    }
+
+    if (!message) {
+      messageError.textContent = "El mensaje no puede estar vacío.";
+      messageInput.classList.add("input-error");
+      isValid = false;
+    }
+
+    // Si todo es válido, mostrar mensaje de éxito
+    if (isValid) {
+      showSuccessMessage(name);
+      form.reset();
+    }
+  });
+
+  function clearErrors() {
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+
+    const previousSuccess = document.getElementById("success-message");
+    if (previousSuccess) {
+      previousSuccess.remove();
+    }
+  }
+
+  function ensureErrorContainer(input) {
+    let error = input.parentElement.querySelector(".error-message");
+    if (!error) {
+      error = document.createElement("p");
+      error.className = "error-message text-sm text-red-500 mt-1";
+      input.parentElement.appendChild(error);
+    }
+    return error;
+  }
+
+  function showSuccessMessage(name) {
+    const success = document.createElement("p");
+    success.id = "success-message";
+    success.textContent = `✅ Gracias por su contacto, ${name}. En breve le estaré respondiendo.`;
+    success.className = "text-green-600 font-medium mt-6 text-center";
+    form.appendChild(success);
+  }
+
+  [nameInput, emailInput, messageInput].forEach((input) => {
+    input.addEventListener("input", () => {
+      const errorContainer =
+        input.parentElement.querySelector(".error-message");
+      errorContainer.textContent = "";
+      input.classList.remove("input-error");
     });
+  });
 });
