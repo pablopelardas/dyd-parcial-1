@@ -14,6 +14,7 @@ export default defineConfig({
         dyd: 'dyd.html',
         materias: 'materias.html',
         avisos: 'avisos.html',
+        enConstruccion: 'en-construccion.html',
       }
     }
   }
