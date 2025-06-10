@@ -16,7 +16,7 @@ class CustomHeader extends HTMLElement {
             </div>
             <div class="flex flex-1 items-center justify-center sm:gap-4 sm:justify-between">
               <div class="flex shrink-0 items-center">
-                <img class="h-32 w-auto" src="/img/logo.png" alt="DyD">
+                <img class="h-32 w-auto" src="img/logo.png" alt="DyD">
                 <h2 class="text-white text-2xl hidden lg:block font-inter">Diseño y Desarrollo Web</h2>
               </div>
               <div class="hidden sm:ml-6 sm:block">
@@ -88,12 +88,12 @@ class CustomHeader extends HTMLElement {
               true
             )}
              <button
-                id="themeToggleBtn"
+                id="themeToggleBtnMobile"
                 class="relative group text-gray-300 hover:text-white p-2 cursor-pointer transition-colors"
                 aria-label="Cambiar tema"
               >
                 <svg
-                  id="themeIcon"
+                  id="themeIconMobile"
                   class="w-6 h-6"
                   fill="none"
                   stroke="currentColor"
@@ -101,11 +101,11 @@ class CustomHeader extends HTMLElement {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path id="iconPath" stroke-linecap="round" stroke-linejoin="round" d="" />
+                  <path id="iconPathMobile" stroke-linecap="round" stroke-linejoin="round" d="" />
                 </svg>
 
                 <div class="absolute top-1/2 left-10 -translate-y-1/2 px-2 py-1 text-xs bg-gray-700 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                  <span id="themeTooltip">Cambiar a tema oscuro</span>
+                  <span id="themeTooltipMobile">Cambiar a tema oscuro</span>
                 </div>
               </button>
           </div>
@@ -151,33 +151,45 @@ class CustomHeader extends HTMLElement {
   }
 
 setupThemeSwitcher() {
-  const toggleBtn = this.querySelector("#themeToggleBtn");
-  const iconPath = this.querySelector("#iconPath");
-  const tooltip = this.querySelector("#themeTooltip");
+  const setups = [
+    {
+      toggleBtn: this.querySelector("#themeToggleBtn"),
+      iconPath: this.querySelector("#iconPath"),
+      tooltip: this.querySelector("#themeTooltip"),
+    },
+    {
+      toggleBtn: this.querySelector("#themeToggleBtnMobile"),
+      iconPath: this.querySelector("#iconPathMobile"),
+      tooltip: this.querySelector("#themeTooltipMobile"),
+    },
+  ];
 
   const setThemeVisuals = (theme) => {
     const isDark = theme === "dark";
     document.documentElement.classList.toggle("dark", isDark);
     localStorage.setItem("themePreference", theme);
 
-    iconPath.setAttribute(
-      "d",
-      isDark
-        // icono de sol (cuando está en modo oscuro)
-        ? "M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 14.14l.71-.71M19.95 19.95l.71-.71M21 12h1M2 12H1m11-5a5 5 0 000 10 5 5 0 000-10z"
-        // icono de luna (cuando está en modo claro)
-        : "M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-    );
-
-    tooltip.textContent = isDark
-      ? "Cambiar a tema claro"
-      : "Cambiar a tema oscuro";
+    setups.forEach(({ iconPath, tooltip }) => {
+      if (!iconPath || !tooltip) return;
+      iconPath.setAttribute(
+        "d",
+        isDark
+          ? "M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 14.14l.71-.71M19.95 19.95l.71-.71M21 12h1M2 12H1m11-5a5 5 0 000 10 5 5 0 000-10z"
+          : "M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+      );
+      tooltip.textContent = isDark
+        ? "Cambiar a tema claro"
+        : "Cambiar a tema oscuro";
+    });
   };
 
-  toggleBtn.addEventListener("click", () => {
-    const current = localStorage.getItem("themePreference") || "light";
-    const newTheme = current === "dark" ? "light" : "dark";
-    setThemeVisuals(newTheme);
+  setups.forEach(({ toggleBtn }) => {
+    if (!toggleBtn) return;
+    toggleBtn.addEventListener("click", () => {
+      const current = localStorage.getItem("themePreference") || "light";
+      const newTheme = current === "dark" ? "light" : "dark";
+      setThemeVisuals(newTheme);
+    });
   });
 
   const initialTheme = localStorage.getItem("themePreference") || "light";

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materia en construcción</title>
+    <script>
+      (function () {
+        const theme = localStorage.getItem("themePreference");
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <meta property="og:title" content="Materia en construcción" />
+    <meta property="og:description" content="Esta materia se encuentra en construcción." />
+    <meta property="og:image" content="img/logo.png" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-dyd-100 font-poppins dark:bg-dark-bg">
+    <custom-header></custom-header>
+
+    <main class="min-h-[calc(100dvh-120px)] flex flex-col items-center justify-center text-center px-4">
+      <h1 class="text-3xl font-bold text-dyd-900 dark:text-dark-text mb-4">Materia en construcción</h1>
+      <p class="text-gray-700 dark:text-dark-text text-lg mb-6">
+        Esta sección estará disponible próximamente. Estamos trabajando para brindarte la mejor experiencia.
+      </p>
+      <a
+        href="materias.html"
+        class="inline-block bg-dyd-900 text-white px-6 py-3 rounded-md font-semibold hover:bg-dyd-700 transition-colors"
+      >
+        Volver a Materias
+      </a>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
