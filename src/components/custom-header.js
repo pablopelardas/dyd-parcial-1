@@ -199,29 +199,6 @@ setupThemeSwitcher() {
   applyInitialTheme() {
     const theme = localStorage.getItem("themePreference") || "light";
     document.documentElement.classList.toggle("dark", theme === "dark");
-    this.updateThemeButtons(theme);
-  }
-
-  updateThemeButtons(theme) {
-    const show = (el) => el && (el.style.display = "inline-block");
-    const hide = (el) => el && (el.style.display = "none");
-
-    const lightBtn = this.querySelector("#lightModeBtn");
-    const darkBtn = this.querySelector("#darkModeBtn");
-    const lightBtnMobile = this.querySelector("#lightModeBtnMobile");
-    const darkBtnMobile = this.querySelector("#darkModeBtnMobile");
-
-    if (theme === "dark") {
-      hide(darkBtn);
-      show(lightBtn);
-      hide(darkBtnMobile);
-      show(lightBtnMobile);
-    } else {
-      hide(lightBtn);
-      show(darkBtn);
-      hide(lightBtnMobile);
-      show(darkBtnMobile);
-    }
   }
 }
 
